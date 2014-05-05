@@ -25,9 +25,11 @@ public class StaticFileService {
 
 
             File file = new File("/tmp/jahia" + node.getNode().getUrl());
+            // creation des repertoires parents manquants
             File parentDir=file.getParentFile();
             parentDir.mkdirs();
 
+            // creation du fichier vide
             file.createNewFile();
             outputStream =
                     new FileOutputStream(file);
